@@ -9,8 +9,9 @@ class UserProfile(models.Model):
     imei = models.CharField(max_length=64)
     lock_password = models.CharField(max_length=32)
     master_id = models.CharField(max_length=64)
-    master_password = models.CharField(max_length=32)
+    # master_password = models.CharField(max_length=32)
 
 class MasterProfile(models.Model):
-    name = models.CharField(max_length=64)
+    user_id = models.CharField(max_length=64)
+    master_id = models.CharField(max_length=64)
     master_password = models.CharField(max_length=64)

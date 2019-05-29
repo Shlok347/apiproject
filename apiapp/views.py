@@ -30,9 +30,11 @@ class UserProfileViewSet(viewsets.ModelViewSet):
         return Response({'http_method': 'PUT'})
 
 
-class UserProfileViewSet(viewsets.ModelViewSet):
+class MasterProfileViewSet(viewsets.ModelViewSet):
     queryset = models.MasterProfile.objects.all()
-    serializer_class = serializers.MasterProfile
+    serializer_class = serializers.MasterProfileSerializer
+    filter_backends = (filters.SearchFilter,)
+    search_fields = ('master_id',)
     # serializer = serializers.UserProfileSerializer(user1, many=True)
     def get(self, request):
         # queryset = models.ProfileFeedItem.objects.all()

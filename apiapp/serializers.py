@@ -8,5 +8,5 @@ class UserProfileSerializer(serializers.ModelSerializer):
 
 class MasterProfileSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.UserProfile
+        model = models.MasterProfile
         fields = '__all__'
