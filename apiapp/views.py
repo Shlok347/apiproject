@@ -28,3 +28,17 @@ class UserProfileViewSet(viewsets.ModelViewSet):
 
     def update(self, request, pk=None):
         return Response({'http_method': 'PUT'})
+
+
+class UserProfileViewSet(viewsets.ModelViewSet):
+    queryset = models.MasterProfile.objects.all()
+    serializer_class = serializers.MasterProfile
+    # serializer = serializers.UserProfileSerializer(user1, many=True)
+    def get(self, request):
+        # queryset = models.ProfileFeedItem.objects.all()
+        user1 = models.MasterProfile.objects.all()
+        serializer = serializers.MasterProfileSerializer(user1, many=True)
+
+
+    def update(self, request, pk=None):
+        return Response({'http_method': 'PUT'})

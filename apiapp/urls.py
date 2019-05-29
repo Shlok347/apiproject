@@ -6,6 +6,7 @@ from . import views
 router = DefaultRouter()
 
 router.register('profile', views.UserProfileViewSet,  base_name='profile')
+router.register('master', views.MasterProfileViewSet,  base_name='master')
 
 urlpatterns = [
 

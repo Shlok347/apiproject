@@ -10,3 +10,7 @@ class UserProfile(models.Model):
     lock_password = models.CharField(max_length=32)
     master_id = models.CharField(max_length=64)
     master_password = models.CharField(max_length=32)
+
+class MasterProfile(models.Model):
+    name = models.CharField(max_length=64)
+    master_password = models.CharField(max_length=64)
